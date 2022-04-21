@@ -5,6 +5,14 @@ import listState from './Atoms';
 const List = () => {
   const [todoList, setTodoList] = useRecoilState(listState);
 
+  const replaceItem = (arr, index, newItem) => {
+    return [...arr.splice(0, index), newItem, ...arr.splice(index + 1)];
+  };
+
+  const removeItem = (arr, index) => {
+    return [...arr.splice(0, index), ...arr.splice(index + 1)];
+  };
+
   return (
     <>
       {todoList.length < 1 ? (
@@ -16,8 +24,8 @@ const List = () => {
               {item.item}
               <input
                 type="checkbox"
-                name="completion"
                 checked={item.completed}
+                onChange={() => console.log('click')}
               />
             </div>
           );

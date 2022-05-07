@@ -10,18 +10,18 @@ const ItemCreator = () => {
     setInput(event.target.value);
   };
 
-  const submit = () => {
-    setTodoList([
-      ...todoList,
-      {
-        id: getId(),
-        item: input,
-        completed: false,
-      },
-    ]);
-    setInput('');
-    console.log('ping', todoList);
-  };
+  // const submit = () => {
+  //   setTodoList([
+  //     ...todoList,
+  //     {
+  //       id: getId(),
+  //       item: input,
+  //       completed: false,
+  //     },
+  //   ]);
+  //   setInput('');
+  //   console.log('ping', todoList);
+  // };
 
   return (
     <div>
